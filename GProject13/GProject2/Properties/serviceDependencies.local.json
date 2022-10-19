@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql.local",
+      "connectionId": "AccountDBContextConnection"
+    },
+    "mssql2": {
+      "type": "mssql.local",
+      "connectionId": "CoachDBContextConnection"
+    },
+    "mssql3": {
+      "type": "mssql.local",
+      "connectionId": "CoachDBContext"
+    }
+  }
+}

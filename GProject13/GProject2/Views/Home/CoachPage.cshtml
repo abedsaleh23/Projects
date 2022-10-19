@@ -1,0 +1,290 @@
+﻿@model GProject2.Models.Coach
+
+@{
+    ViewData["Title"] = "Games";
+    Layout = "";
+   
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .button {
+            background-color: #22223b;
+            border: solid;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            font-size: 16px;
+            margin: 30px 100px;
+            opacity: 0.6;
+            transition: 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+            .button:hover {
+                opacity: 1
+            }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <title>Become a Coach : Games</title>
+    <link href="/css2/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/js2/jquery.min.js"></script>
+    <!-- Custom Theme files -->
+    <!--theme-style-->
+    <link href="/css2/style2.css" rel="stylesheet" type="text/css" media="all" />
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Games Park Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <script src="/js2/modernizr.custom.97074.js"></script>
+    <script type="text/javascript" src="/js2/jquery.hoverdir.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            $(' #da-thumbs > li ').each(function () { $(this).hoverdir(); });
+
+        });
+    </script>
+    <!--flexslider-->
+    <link rel="stylesheet" href="/css2/flexslider.css" type="text/css" media="screen" />
+    <!--//flexslider-->
+    <!--light-box-files -->
+    <script type="text/javascript" charset="utf-8">
+        $(function () {
+            $('.games a').Chocolat();
+        });
+    </script>
+</head>
+
+<body style="background-color:white">
+    <!--header-->
+   <div class="header">
+        <div class="header-top">
+                    <div class="logo">
+                        <h1><a href="index.html"> Become a  <span>Coach</span></a></h1>
+                    </div>
+                    <div class="top-nav">
+                        
+                        <ul>
+                            <li ><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Games">Games</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                            @if(this.User.IsInRole("Admin")){<li class="nav-item"><a asp-area="" asp-controller="Coaches" asp-action="Index">Manage Users</a></li>}
+                            
+                        </ul>
+
+                        <!--script-->
+                        <script>
+                            $("span.menu").click(function () {
+                                $(".top-nav ul").slideToggle(500, function () {
+                                });
+                            });
+                        </script>
+
+                    </div>
+                    <div class="top-nav">
+                    <div class="dropdown">
+                                <button class="dropbtn"> <i class="material-icons">account_box</i> Account </button>
+                                <div class="dropdown-content">
+                                    <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Settings</a>
+                                   <a > <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                                        <button style="background-color:transparent; border-width:0px;width:100%;height:100%; text-align:left;" type="submit" >Logout</button>
+                                    </form></a>
+                                </div>
+                            </div>
+
+                             </div>
+
+
+                           
+
+                    
+                
+
+        </div>
+    </div>
+
+    <!--coach page-->
+    <div class="copage">
+        <!--coach card-->
+        <div class="chcard">
+
+            <div class="profilepic">
+                <img src="data:image;base64,@Convert.ToBase64String(Model.Image)" alt="" height=100% width=100% style="border-radius:5px;" />
+            </div>
+
+            <div class="profilepic ">
+                <h3 style="color:#cad0f6;">@Html.DisplayFor(model => model.UserName)</h3>
+                <div class="advn-two">
+                    <h4 style="color:#cad0f6"> coach statement</h4>
+                    <p>@Html.DisplayFor(model => model.ShortDescription)</p>
+                    <ul style="color:#cad0f6">
+                        <li><i class="glyphicon glyphicon-ok"></i>@Html.DisplayFor(model => model.Achivment)</li>                       
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+
+        <!--coach card-->
+
+        <!--leftside-->
+
+        <div class="leftbox">
+
+        <!--booking card-->
+        <div class="bookingbox">
+            <div class="profilepic">
+                <div class="checkoutel2">
+                    <p style="font-size: 15px;"> @Html.DisplayFor(model => model.About)</p>
+                </div>
+                <div class="checkoutel2">
+                    <p style="font-size: 15px;">Price: @Html.DisplayFor(model => model.Price).00$ </p>
+                </div>
+
+            </div>
+
+            <div class="profilepic">
+
+                <a class="button" href="#popup1">Book</a>
+
+            </div>
+            <!----------------------------------------------------------------------------------------->
+            <!----------------------------------------------------------------------------------------->
+            <div id="popup1" class="overlay">
+                <div class="popup">
+                    <div class="checkoutel">
+                        <p style="font-size: 25px;">Booking Confirmation</p>
+                    </div>
+                    <div class="checkout">
+
+
+                        <div class="checkoutel2">
+                            <p style="font-size: 20px;">Session details  <i class="glyphicon glyphicon-time" style=" font-size: .73em;"></i></p>
+
+                        </div>
+
+                        <div class="checkoutel2">
+                            <p style="font-size: 15px;"> </p>
+
+                        </div>
+                        <div class="checkoutel2">
+                            <label for="start">Pick date:</label>
+
+                            <input type="date" id="" name=""
+                                   value="2022-07-22"
+                                   min="2022-01-01" max="2022-12-31">
+
+                            <label for="">Pick time: </label>
+
+                            <select name="" id="">
+                                <option value="">10:00 PM</option>
+                                <option value="">11:00 PM</option>
+                                <option value="">12:00 PM</option>
+                                <option value="">01:00 AM</option>
+                            </select>
+                        </div>
+
+
+                        <div class="checkoutel3">
+                            <div class="checkoutel4">
+                                <h6>Session price </h6>
+                                <h6>Discount</h6>
+                                <h5 style="font-weight: bold;">Your total</h5>
+                            </div>
+                            <span></span>
+                            <div class="checkoutel4">
+                                <h6>@Html.DisplayFor(model => model.Price).00$</h6>
+                                <h6>00.00$</h6>
+                                <h5 style="font-weight: bold;">@Html.DisplayFor(model => model.Price).00$</h5>
+                            </div>
+
+                        </div>
+
+                        <div class="confb">
+
+                            <a class="button" href="#popup1">Confirm Booking</a>
+
+                        </div>
+                    </div>
+
+                    <a class="close" href="#">&times;</a>
+                    <div class="content">
+                    </div>
+                </div>
+            </div>
+            
+            <!----------------------------------------------------------------------------------------->
+            <!----------------------------------------------------------------------------------------->
+        </div>
+        <!--booking card-->
+        <!--skills-->
+        
+        <!--skills-->
+
+    </div>
+    <!--leftside-->
+    </div>
+    <!--coach page-->
+    <!--footer-->
+    <div class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="col-md-4  top-footer">
+                    <ul>
+                        <li><a><i class="fa fa-twitter" style="font-size:36px"></i></a></li>
+                        <li><a href="https://twitter.com/iibeastly">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 top-footer">
+                    <ul>
+                        <li><a><i class="fa fa-youtube-play" style="font-size:36px"></i></a></li>
+                        <li><a href="#">Youtube</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 top-footer">
+                    <ul>
+                        <li><a><i class="fa fa-twitch" style="font-size:36px"></i></a></li>
+                        <li><a href="https://www.twitch.tv/crazymo__/about">Twitch</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <ul class="footer-grid">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a asp-area="" asp-controller="Coaches" asp-action="Create">Request for Coaching</a></li>
+            </ul>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+

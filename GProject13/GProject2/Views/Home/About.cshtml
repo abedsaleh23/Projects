@@ -1,0 +1,192 @@
+﻿
+@{
+    ViewData["Title"] = "About";
+    Layout = "";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Become a Coach : About us</title>
+    <link href="/css2/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/js2/jquery.min.js"></script>
+    <!-- Custom Theme files -->
+    <!--theme-style-->
+    <link href="/css2/style2.css" rel="stylesheet" type="text/css" media="all" />
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Games Park Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--flexslider-->
+    <link rel="stylesheet" href="/css2/flexslider.css" type="text/css" media="screen" />
+    <!--//flexslider-->
+</head>
+
+<body style="background-color:white">
+    <!--header-->
+    <div class="header">
+        <div class="header-top">
+            <div class="logo">
+                <h1><a href="index.html"> Become a  <span>Coach</span></a></h1>
+            </div>
+            <div class="top-nav">
+
+                <ul>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Games">Games</a></li>
+                    <li class="active"><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    @if (this.User.IsInRole("Admin"))
+                    {
+                        <li class="nav-item"><a asp-area="" asp-controller="Coaches" asp-action="Index">Manage Users</a></li>
+                    }
+
+                </ul>
+
+                <!--script-->
+                <script>
+                    $("span.menu").click(function() {
+                        $(".top-nav ul").slideToggle(500, function() {
+                        });
+                    });
+                </script>
+
+            </div>
+            <div class="top-nav">
+                <div class="dropdown">
+                    <button class="dropbtn"> <i class="material-icons">account_box</i> Account </button>
+                    <div class="dropdown-content">
+                        <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Settings</a>
+                        <a>
+                            <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                                <button style="background-color:transparent; border-width:0px;width:100%;height:100%; text-align:left;" type="submit">Logout</button>
+                            </form>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!--start-about-->
+    <div class="about">
+        <div class="container">
+            <div class="about-top">
+                <h3 style="color:#22223b">ABOUT US</h3>
+            </div>
+            <div class="about-bottom">
+                <p>
+                    Gaming has been changing through the years, people used to play games only to have fun but now days a lot of people started to play games competitively and started making money and it became some people main career.</p>
+                <p>
+                    We have witnessed a huge rise in gaming communities within the MENA region in the past decade, where once people played mostly offline story-based video games, are now beginning to reach the highest stages of professional competitive gaming.
+                    Such rise calls for a new methodology to approaching gaming, setting up opportunity and facilitating new environments for talented and skilled players to match their regional and international competitors.
+                </p>  
+                <p>This Website is about increasing the knowledge of the competitive seen in MENA (Middle East and North Africa) by letting the pro players share their knowledge to players who wants to join the competitive seen by giving private lessons (live) videos.
+                    At the end, the aim of this project is to get our region to compete globally and get better and better and create new fresh talented players.
+                </p>
+                
+                <div class="about-btm">
+                    <div class="col-md-6 about-left">
+                        <a href="single.html"><img class="img-responsive" src="images/bt.jpg" alt="" /></a>
+                    </div>
+                    <div class="col-md-6 about-right">
+                        <a href="single.html"><img class="img-responsive" src="images/bt1.jpg" alt="" /></a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!--advantages-->
+            <div class="advantages">
+                <div class="col-md-6 advantages-left ">
+                    <h3 style="color:#22223b">OUR ADVANTAGES</h3>
+                    <div class="advn-one">
+                        <div class="ad-mian">
+                            <div class="ad-left">
+                                <p style="background-color:#22223b">1</p>
+                            </div>
+                            <div class="ad-right">
+                                <h4 style="color:#22223b">Comprehensiveness in games</h4>
+                                <p>This Website has a large number of Games that let the player to choose his favorite game and to be a professional player at this game   </p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="ad-mian">
+                            <div class="ad-left">
+                                <p style="background-color:#22223b">2</p>
+                            </div>
+                            <div class="ad-right">
+                                <h4 style="color:#22223b">
+                                    Weakly Tournaments
+                                </h4>
+                                <p>This website has a weakly Tournaments with a big prize to let the teams in MENA faces each other and to improve their technical and tactical skills in the game  </p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="ad-mian">
+                            <div class="ad-left">
+                                <p style="background-color:#22223b">3</p>
+                            </div>
+                            <div class="ad-right">
+                                <h4 style="color:#22223b">Full-Team Lessons</h4>
+                                <p>In this Website you can learn not just one-on-one lessons but also Team-on-one lessons to improve team skills and communication skills</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div>
+
+                        </div>
+
+                    </div>
+                </div>
+               
+        </div>
+    </div>
+    </div>
+    <!--//team-->
+    <!--//about-->
+    <!--footer-->
+    <div class="footer" style="margin-top:20px">
+        <div class="container">
+            <div class="footer-top">
+                <div class="col-md-4  top-footer">
+                    <ul>
+                        <li><a><i class="fa fa-twitter" style="font-size:36px"></i></a></li>
+                        <li><a href="https://twitter.com/iibeastly">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 top-footer">
+                    <ul>
+                        <li><a><i class="fa fa-youtube-play" style="font-size:36px"></i></a></li>
+                        <li><a href="#">Youtube</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 top-footer">
+                    <ul>
+                        <li><a><i class="fa fa-twitch" style="font-size:36px"></i></a></li>
+                        <li><a href="https://www.twitch.tv/crazymo__/about">Twitch</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <ul class="footer-grid">
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Games">Games</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                <li><a asp-area="" asp-controller="Coaches" asp-action="Create">Request for Coaching</a></li>
+            </ul>
+
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,193 @@
+﻿@model GProject2.Models.Coach
+
+@{
+    ViewData["Title"] = "Account";
+    Layout = "";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .button {
+            background-color: #22223b;
+            border: solid;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            font-size: 16px;
+            margin: 30px 100px;
+            opacity: 0.6;
+            transition: 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+            .button:hover {
+                opacity: 1
+            }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <title>Become a Coach : Games</title>
+    <link href="/css2/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/js2/jquery.min.js"></script>
+    <!-- Custom Theme files -->
+    <!--theme-style-->
+    <link href="/css2/style2.css" rel="stylesheet" type="text/css" media="all" />
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Games Park Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <script src="/js2/modernizr.custom.97074.js"></script>
+    <script type="text/javascript" src="/js2/jquery.hoverdir.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            $(' #da-thumbs > li ').each(function () { $(this).hoverdir(); });
+
+        });
+    </script>
+    <!--flexslider-->
+    <link rel="stylesheet" href="/css2/flexslider.css" type="text/css" media="screen" />
+    <!--//flexslider-->
+    <!--light-box-files -->
+    <script type="text/javascript" charset="utf-8">
+        $(function () {
+            $('.games a').Chocolat();
+        });
+    </script>
+</head>
+
+<body style="background-color:white">
+    <!--header-->
+    <div class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="head-top">
+                    <div class="logo">
+                        <h1><a href="index.html"> Become a  <span>Coach</span></a></h1>
+                    </div>
+                    <div class="top-nav">
+                        <span class="menu"><img src="/images2/menu.png" alt=""> </span>
+                        <ul>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                            <li class="active"><a asp-area="" asp-controller="Home" asp-action="Games">Games</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                            <li>
+                                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                                    <button style="color:#ffffff" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                                </form>
+                            </li>
+
+                            <div class="clearfix"></div>
+                        </ul>
+
+
+                        <!--script-->
+                        <script>
+                            $("span.menu").click(function () {
+                                $(".top-nav ul").slideToggle(500, function () {
+                                });
+                            });
+                        </script>
+
+                    </div>
+
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--coach page-->
+    <div class="copage">
+        <!--coach card-->
+        <div class="chcard">
+
+            <div class="profilepic">
+                <img src="/images2/coach 2.png" alt="" style="border-radius:5px;" />
+            </div>
+
+            <div class="profilepic ">
+                <h3 style="color:#cad0f6;">@Html.DisplayFor(model => model.UserName)</h3>
+                <div class="advn-two">
+                    <h4 style="color:#cad0f6"> coach statement</h4>
+                    <p>@Html.DisplayFor(model => model.About)</p>
+                    <ul style="color:#cad0f6">
+                        <li><i class="glyphicon glyphicon-ok"></i>acheivment 1</li>
+                        <li><i class="glyphicon glyphicon-ok"></i>acheivment 2</li>
+                        <li><i class="glyphicon glyphicon-ok"></i>acheivment 3</li>
+                        <li><i class="glyphicon glyphicon-ok"></i>acheivment 4</li>
+                        <li><i class="glyphicon glyphicon-ok"></i>acheivment 5</li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+            <div class="clearfix"></div>
+        </div>
+
+
+        <!--coach card-->
+        <!--booking card-->
+
+        <!--booking card-->
+    </div>
+    <!--coach page-->
+    <!--footer-->
+    <div class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="col-md-4  top-footer">
+                    <ul>
+                        <li><a><i class="fa fa-twitter" style="font-size:36px"></i></a></li>
+                        <li><a href="https://twitter.com/iibeastly">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 top-footer">
+                    <ul>
+                        <li><a><i class="fa fa-youtube-play" style="font-size:36px"></i></a></li>
+                        <li><a href="#">Youtube</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 top-footer">
+                    <ul>
+                        <li><a><i class="fa fa-twitch" style="font-size:36px"></i></a></li>
+                        <li><a href="https://www.twitch.tv/crazymo__/about">Twitch</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <ul class="footer-grid">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+

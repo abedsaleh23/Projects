@@ -1,0 +1,310 @@
+﻿
+@{
+    ViewData["Title"] = "Games";
+    Layout = "";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <title>Become a Coach : Games</title>
+    <link href="/css2/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/js2/jquery.min.js"></script>
+    <!-- Custom Theme files -->
+    <!--theme-style-->
+    <link href="/css2/style2.css" rel="stylesheet" type="text/css" media="all" />
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Games Park Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <script src="/js2/modernizr.custom.97074.js"></script>
+    <script type="text/javascript" src="/js2/jquery.hoverdir.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            $(' #da-thumbs > li ').each(function () { $(this).hoverdir(); });
+
+        });
+    </script>
+    <!--flexslider-->
+    <link rel="stylesheet" href="/css2/flexslider.css" type="text/css" media="screen" />
+    <!--//flexslider-->
+    
+    <!--light-box-files -->
+    <script type="text/javascript" charset="utf-8">
+        $(function () {
+            $('.games a').Chocolat();
+        });
+    </script>
+</head>
+
+<body style="background-color:white">
+    <!--header-->
+    <div class="header">
+        <div class="header-top">
+                    <div class="logo">
+                        <h1><a href="index.html"> Become a  <span>Coach</span></a></h1>
+                    </div>
+                    <div class="top-nav">
+                        
+                        <ul>
+                            <li ><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                            <li class="active"><a asp-area="" asp-controller="Home" asp-action="Games">Games</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                            @if(this.User.IsInRole("Admin")){<li class="nav-item"><a asp-area="" asp-controller="Coaches" asp-action="Index">Manage Users</a></li>}
+                            
+                        </ul>
+
+                        <!--script-->
+                        <script>
+                            $("span.menu").click(function () {
+                                $(".top-nav ul").slideToggle(500, function () {
+                                });
+                            });
+                        </script>
+
+                    </div>
+                    <div class="top-nav">
+                    <div class="dropdown">
+                                <button class="dropbtn"> <i class="material-icons">account_box</i> Account </button>
+                                <div class="dropdown-content">
+                                    <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Settings</a>
+                                   <a > <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                                        <button style="background-color:transparent; border-width:0px;width:100%;height:100%; text-align:left;" type="submit" >Logout</button>
+                                    </form></a>
+                                </div>
+                            </div>
+
+                             </div>
+
+
+                           
+
+                    
+                
+
+        </div>
+    </div>
+
+    <!--banner-->
+    <div class="banner">
+        <div class="container">
+            <h2>Top Games</h2>
+            <div class="banner-matter">
+                <div class="slider">
+
+                    <ul class="slides">
+                        <li>
+                            <div class="ban">
+                                <div class=" ban-in ban-grid">
+                                    <img class="img-responsive " src="/images2/w1.jpg" alt="" />
+                                </div>
+                                <div class=" ban-in ban-grid1">
+                                    <img class="img-responsive" src="/images2/w2.jpg" alt="" />
+                                </div>
+                                <div class=" ban-in ban-grid2">
+                                    <img class="img-responsive " src="/images2/w3.jpg" alt="" />
+                                </div>
+                                <div class=" ban-in ban-grid3">
+                                    <img class="img-responsive " src="/images2/w4.jpg" alt="" />
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </li>
+
+
+                    </ul>
+                </div>
+
+                <script>window.jQuery || document.write('<script src="/js2/libs/jquery-1.7.min.js">\x3C/script>')</script>
+                <!--FlexSlider-->
+                <script defer src="/js2/jquery.flexslider.js"></script>
+                <script type="text/javascript">
+                    $(function () {
+                        SyntaxHighlighter.all();
+                    });
+                    $(window).load(function () {
+                        $('.flexslider').flexslider({
+                            animation: "slide",
+                            start: function (slider) {
+                                $('body').removeClass('loading');
+                            }
+                        });
+                    });
+                </script>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--games-->
+    <div class="container">
+        <div class="games">
+            <h3 style="color:#22223b">Games</h3>
+            <section>
+                <ul id="da-thumbs" class="da-thumbs">
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Thedivision">
+                            <img src="/images2/w1.jpg" alt="" />
+                            <div style="background-color:#22223b">
+                                <h5>The Division 2</h5>
+                                <span>Tom Clancy's The Division 2 is an online-only action role-playing video game developed by Massive Entertainment and published by Ubisoft.</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="lol">
+                            <img src="/images2/w2.jpg" alt="" />
+                            <div style="background-color:#22223b">
+                                <h5>League of Legends</h5>
+                                <span>League of Legends, commonly referred to as League, is a 2009 multiplayer online battle arena video game developed and published by Riot Games.</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Apex">
+                            <img src="/images2/w3.jpg" alt="" />
+                            <div style="background-color:#22223b">
+                                <h5>Apex Legends</h5>
+                                <span>Apex Legends is a free-to-play battle royale-hero shooter game developed by Respawn Entertainment and published by Electronic Arts.</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="R6">
+                            <img src="/images2/w4.jpg" alt="" />
+                            <div style="background-color:#22223b">
+                                <h5>Rainbow 6 Siege</h5>
+                                <span>Tom Clancy's Rainbow Six Siege is an online tactical shooter video game developed by Ubisoft Montreal and published by Ubisoft.</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Fifa">
+                            <img src="/images2/w5.jpg" alt="" />
+                            <div style="background-color:#22223b">
+                                <h5>FIFA 22</h5>
+                                <span>FIFA 22 is a football simulation video game published by Electronic Arts. It is the 29th installment in the FIFA series.</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Pubg">
+                            <img src="/images2/w6.jpg" alt="" />
+                            <div style="background-color:#22223b">
+                                <h5>PUBG</h5>
+                                <span>PUBG: Battlegrounds is an online multiplayer battle royale game developed and published by PUBG Studios, a subsidiary of Krafton.</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Valorant">
+                            <img src="/images2/w7.jpg" alt="" />
+                            <div style="background-color:#22223b">
+                                <h5>Valorant</h5>
+                                <span>Valorant is a free-to-play first-person hero shooter developed and published by Riot Games, for Microsoft Windows.</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Fortnite">
+                            <img src="/images2/w8.jpg" alt="" />
+                            <div style="background-color:#22223b">
+                                <h5>Fortnite</h5>
+                                <span>Fortnite is an online video game developed by Epic Games and released in 2017.</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Clash">
+                            <img src="/images2/w9.jpg" alt="" />
+                            <div style="background-color:#22223b">
+                                <h5>Clash Royal</h5>
+                                <span>Clash Royale is a free-to-play real-time strategy video game developed and published by Supercell. The game combines elements from collectible card games, tower defense, and multiplayer online battle arena.</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Overwatch">
+                            <img src="/images2/w10.jpg" alt="" />
+                            <div style="background-color:#22223b">
+                                <h5>Overwatch</h5>
+                                <span>Overwatch is a 2016 team-based multiplayer first-person shooter game developed and published by Blizzard Entertainment.</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Dota">
+                            <img src="/images2/w11.jpg" alt="" />
+                            <div style="background-color:#22223b">
+                                <h5>Dota 2</h5>
+                                <span>Dota 2 is a multiplayer online battle arena video game developed and published by Valve.</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Hearth">
+                            <img src="/images2/w12.jpg" alt="" />
+                            <div style="background-color:#22223b">
+                                <h5>Hearth Stone</h5>
+                                <span>Hearthstone is a free-to-play online digital collectible card game developed and published by Blizzard Entertainment.</span>
+                            </div>
+                        </a>
+                    </li>
+                    <div class="clearfix"> </div>
+                </ul>
+            </section>
+
+
+        </div>
+    </div>
+    <!--//games-->
+    <!--footer-->
+    <div class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="col-md-4  top-footer">
+                    <ul>
+                        <li><a><i class="fa fa-twitter" style="font-size:36px"></i></a></li>
+                        <li><a href="https://twitter.com/iibeastly">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 top-footer">
+                    <ul>
+                        <li><a><i class="fa fa-youtube-play" style="font-size:36px"></i></a></li>
+                        <li><a href="#">Youtube</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 top-footer">
+                    <ul>
+                        <li><a><i class="fa fa-twitch" style="font-size:36px"></i></a></li>
+                        <li><a href="https://www.twitch.tv/crazymo__/about">Twitch</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <ul class="footer-grid">
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Games">Games</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                <li><a asp-area="" asp-controller="Coaches" asp-action="Create">Request for Coaching</a></li>
+            </ul>
+
+        </div>
+    </div>
+
+</body>
+</html>
+

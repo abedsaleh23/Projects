@@ -1,0 +1,193 @@
+﻿@model GProject2.Models.Coach
+@{
+    ViewData["Title"] = "Create";
+    Layout = "";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Become a Coach : About us</title>
+    <link href="/css2/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/js2/jquery.min.js"></script>
+    <!-- Custom Theme files -->
+    <!--theme-style-->
+    <link href="/css2/style2.css" rel="stylesheet" type="text/css" media="all" />
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Games Park Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+    Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--flexslider-->
+    <link rel="stylesheet" href="/css2/flexslider.css" type="text/css" media="screen" />
+    <!--//flexslider-->
+</head>
+
+<body style="background-color:white">
+    <!--header-->
+     <div class="header">
+        <div class="header-top">
+            <div class="logo">
+                <h1><a href="index.html"> Become a  <span>Coach</span></a></h1>
+            </div>
+            <div class="top-nav">
+
+                <ul>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Games">Games</a></li>
+                    <li ><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    @if (this.User.IsInRole("Admin"))
+                    {
+                        <li class="nav-item"><a asp-area="" asp-controller="Coaches" asp-action="Index">Manage Users</a></li>
+                    }
+
+                </ul>
+
+                <!--script-->
+                <script>
+                    $("span.menu").click(function() {
+                        $(".top-nav ul").slideToggle(500, function() {
+                        });
+                    });
+                </script>
+
+            </div>
+            <div class="top-nav">
+                <div class="dropdown">
+                    <button class="dropbtn"> <i class="material-icons">account_box</i> Account </button>
+                    <div class="dropdown-content">
+                        <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Settings</a>
+                        <a>
+                            <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                                <button style="background-color:transparent; border-width:0px;width:100%;height:100%; text-align:left;" type="submit">Logout</button>
+                            </form>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Coaches" asp-action="Create"  method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiscordName" class="control-label"></label>
+                <input asp-for="DiscordName" class="form-control" />
+                <span asp-validation-for="DiscordName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Game" class="control-label"></label>
+                <select asp-for="Game" class="form-control" asp-items="Html.GetEnumSelectList<GameType>()">         
+                </select>
+                <span asp-validation-for="Game" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Social" class="control-label"></label>
+                <input asp-for="Social" class="form-control" />
+                <span asp-validation-for="Social" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaypalAcc" class="control-label"></label>
+                <input asp-for="PaypalAcc" class="form-control" />
+                <span asp-validation-for="PaypalAcc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Achivment" class="control-label"></label>
+                <input asp-for="Achivment" class="form-control" />
+                <span asp-validation-for="Achivment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="About" class="control-label"></label>
+                <input asp-for="About" class="form-control" />
+                <span asp-validation-for="About" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShortDescription" class="control-label"></label>
+                <input asp-for="ShortDescription" class="form-control" />
+                <span asp-validation-for="ShortDescription" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input asp-for="Image" type="file" class="custom-file-input" id="customFile">
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit Request" class="btn btn-primary" formmethod="post">
+            </div>
+        </form>
+    </div>
+</div>
+  <!--footer-->
+    <div class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="col-md-4  top-footer">
+                    <ul>
+                        <li><a><i class="fa fa-twitter" style="font-size:36px"></i></a></li>
+                        <li><a href="https://twitter.com/iibeastly">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 top-footer">
+                    <ul>
+                        <li><a><i class="fa fa-youtube-play" style="font-size:36px"></i></a></li>
+                        <li><a href="#">Youtube</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 top-footer">
+                    <ul>
+                        <li><a><i class="fa fa-twitch" style="font-size:36px"></i></a></li>
+                        <li><a href="https://www.twitch.tv/crazymo__/about">Twitch</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <ul class="footer-grid">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        </div>
+    </div>
+</body>
+</html>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
